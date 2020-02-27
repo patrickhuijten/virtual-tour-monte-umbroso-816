@@ -465,7 +465,7 @@
 		
 		
 
-		<layer name="skin_control_bar" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="get:skin_settings.controlbar_height" x="0" y="get:skin_settings.controlbar_offset.normal" y_closed="-60" onloaded="skin_calc_opened_closed();" zorder="3" bgcolor="0xd2d2d2" bgalpha="0" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge">
+		<layer name="skin_control_bar" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="get:skin_settings.controlbar_height" x="0" y="get:skin_settings.controlbar_offset.normal" y_closed="-60" onloaded="skin_calc_opened_closed();" zorder="3" bgcolor="0xd2d2d2" bgalpha="1" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge">
 			<layer name="skin_btn_navi" type="container" align="bottom" x="0" y="0" width="50%" height="40">
 				<layer name="skin_btn_left" style="skin_base|skin_glow" crop="0|192|64|64" align="right" x="220" y="0" scale="0.5" ondown2="set(hlookat_moveforce,-1);" onup2="set(hlookat_moveforce,0);" />
 				<layer name="skin_btn_right" style="skin_base|skin_glow" crop="64|192|64|64" align="right" x="200" y="0" scale="0.5" ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);" />
