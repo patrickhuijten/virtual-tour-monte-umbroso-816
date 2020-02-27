@@ -466,15 +466,13 @@
 		
 
 		<layer name="skin_control_bar" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="get:skin_settings.controlbar_height" x="0" y="get:skin_settings.controlbar_offset.normal" y_closed="-60" onloaded="skin_calc_opened_closed();" zorder="3" bgcolor="0xd2d2d2" bgalpha="0" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge">
-			<layer name="skin_btn_navi" type="container" align="topright" x="0" y="0" width="50%" height="40">
-				<layer name="skin_btn_left" style="skin_base|skin_glow" crop="0|192|64|64" align="right" x="360" y="0" scale="0.5" ondown2="set(hlookat_moveforce,-1);" onup2="set(hlookat_moveforce,0);" />
-				<layer name="skin_btn_right" style="skin_base|skin_glow" crop="64|192|64|64" align="right" x="320" y="0" scale="0.5" ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);" />
-				<layer name="skin_btn_up" style="skin_base|skin_glow" crop="0|256|64|64" align="right" x="280" y="0" scale="0.5" ondown2="set(vlookat_moveforce,-1);" onup2="set(vlookat_moveforce,0);" />
-				<layer name="skin_btn_down" style="skin_base|skin_glow" crop="64|256|64|64" align="right" x="240" y="0" scale="0.5" ondown2="set(vlookat_moveforce,+1);" onup2="set(vlookat_moveforce,0);" />
-				<layer name="skin_btn_in" style="skin_base|skin_glow" crop="0|320|64|64" align="right" x="200" y="0" scale="0.5" ondown2="set(fov_moveforce,-1);" onup2="set(fov_moveforce,0);" />
-				<layer name="skin_btn_out" style="skin_base|skin_glow" crop="64|320|64|64" align="right" x="160" y="0" scale="0.5" ondown2="set(fov_moveforce,+1);" onup2="set(fov_moveforce,0);" />
-				<layer name="skin_btn_gyro" style="skin_base|skin_glow" crop="0|384|64|64" align="right" x="120" y="0" scale="0.5" onclick="switch(plugin[skin_gyro].enabled); if(plugin[skin_gyro].enabled, skin_showmap(false));" visible="false" devices="html5" />
-				<layer name="skin_btn_fs" style="skin_base|skin_glow" crop="0|576|64|64" align="right" x="40" y="0" scale="0.5" onclick="switch(fullscreen);" devices="fullscreensupport" />
+			<layer name="skin_btn_navi" type="container" align="bottom" x="0" y="0" width="50%" height="40">
+				<layer name="skin_btn_left" style="skin_base|skin_glow" crop="0|192|64|64" align="right" x="220" y="0" scale="0.5" ondown2="set(hlookat_moveforce,-1);" onup2="set(hlookat_moveforce,0);" />
+				<layer name="skin_btn_right" style="skin_base|skin_glow" crop="64|192|64|64" align="right" x="200" y="0" scale="0.5" ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);" />
+				<layer name="skin_btn_up" style="skin_base|skin_glow" crop="0|256|64|64" align="right" x="170" y="0" scale="0.5" ondown2="set(vlookat_moveforce,-1);" onup2="set(vlookat_moveforce,0);" />
+				<layer name="skin_btn_down" style="skin_base|skin_glow" crop="64|256|64|64" align="right" x="140" y="0" scale="0.5" ondown2="set(vlookat_moveforce,+1);" onup2="set(vlookat_moveforce,0);" />
+				<layer name="skin_btn_in" style="skin_base|skin_glow" crop="0|320|64|64" align="right" x="110" y="0" scale="0.5" ondown2="set(fov_moveforce,-1);" onup2="set(fov_moveforce,0);" />
+				<layer name="skin_btn_out" style="skin_base|skin_glow" crop="64|320|64|64" align="right" x="80" y="0" scale="0.5" ondown2="set(fov_moveforce,+1);" onup2="set(fov_moveforce,0);" />
 				<layer name="skin_btn_hide" style="skin_base|skin_glow" crop="0|448|64|64" align="right" x="50" y="0" scale="0.5" onclick="skin_hideskin()" />
 
 			</layer>
@@ -859,7 +857,7 @@
 		if(show_vrbutton OR plugin[webvr].mobilevr_fake_support == true, dec(cpos,24));
 		set(rpos,6);
 
-		calc(show_dirbuttons, !device.mobile AND ((area.pixelwidth + 2*cpos) GT 520) );
+		calc(show_dirbuttons,true );
 
 		copy(layer[skin_btn_navi].visible, show_dirbuttons);
 		copy(layer[skin_btn_navi_vertical].visible, show_dirbuttons);
