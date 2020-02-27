@@ -1,8 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
 	<title>Tour Virtual - Monte Umbroso 816</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -17,10 +19,11 @@
 				overflow: hidden;
 			}
 		}
-		
-		:root{
-			--primary: rgba(210,210,210, 0.8)
+
+		:root {
+			--primary: rgba(210, 210, 210, 0.8)
 		}
+
 		html {
 			height: 100%;
 		}
@@ -49,9 +52,9 @@
 
 			background: var(--primary);
 			border-radius: 8px;
-			z-index:10000000000;
+			z-index: 10000000000;
 
-			box-shadow: 8px 8px 16px rgba(40,40,40, 0.2);
+			box-shadow: 8px 8px 16px rgba(40, 40, 40, 0.2);
 		}
 
 		.social-media .item {
@@ -98,41 +101,77 @@
 			background-image: url('./icons/email.png');
 		}
 
-		.logo
-		{
+		.logo {
 			position: absolute;
-			width:120px;
-			height:120px;
+			width: 120px;
+			height: 120px;
 			bottom: 64px;
-			left:10px;
+			left: 10px;
 			z-index: 100000;
 		}
-		.logo a
-		{
+
+		.logo a {
 			display: block;
 			width: 100%;
-			height:100%;
+			height: 100%;
 			background-image: url('./skin/logo.png');
 			background-size: contain;
 		}
+
 		@media only screen and (min-width : 320px) {
-		.social-media
-		{
-			right:0.5em;
-			top:5.5em;
+			.social-media {
+				right: 0.5em;
+				top: 5.5em;
+			}
 		}
-}
+
+		#gradient {
+			position: fixed;
+			bottom: 0;
+			height: 45px;
+			background: rgb(200, 200, 200, 0.5);
+			background: linear-gradient(0deg, rgba(225, 225, 225, 0.5) 0%, rgba(255, 255, 255, 0.75) 100%);
+			width: 100vw;
+			z-index: 200 !important;
+			pointer-events: none;
+		}
+
+		#logo
+		{
+			position: fixed;
+			bottom: 5px;
+			left:5px;
+			width: 150px;
+			height: 35px;
+			z-index: 4000;
+		}
+
+		#logo img {
+			height: 100%;
+		}
 	</style>
 </head>
+
 <body>
 
-<script src="tour.js"></script>
+	<script src="tour.js"></script>
 
-<div id="pano" style="width:100%;height:100%;">
-	<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
-	<script>
-		embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
-	</script>
-</div>
+	<div id="pano" style="width:100%;height:100%;">
+		<div id="gradient"></div>
+		<a id="logo" href="https://inmobiliariabritania.com/monte-umbroso-816/'" target="_blank"><img src="skin/logo.png"></a>
+		<noscript>
+			<table style="width:100%;height:100%;">
+				<tr style="vertical-align:middle;">
+					<td>
+						<div style="text-align:center;">ERROR:<br /><br />Javascript not activated<br /><br /></div>
+					</td>
+				</tr>
+			</table>
+		</noscript>
+		<script>
+			embedpano({ swf: "tour.swf", xml: "tour.xml", target: "pano", html5: "auto", mobilescale: 1.0, passQueryParameters: true });
+		</script>
+	</div>
 </body>
+
 </html>

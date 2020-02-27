@@ -464,12 +464,21 @@
 		</layer>
 		
 		
+2
+3
+4
+5
+6
+7
+<action name="set_css_id" type="Javascript">
+  caller.sprite.id = args[1];
+</action>
 
-		<layer name="skin_control_bar" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="get:skin_settings.controlbar_height" x="0" y="get:skin_settings.controlbar_offset.normal" y_closed="-60" onloaded="skin_calc_opened_closed();" zorder="3" bgcolor="0xd2d2d2" bgalpha="1" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge">
+		<layer name="skin_control_bar"  type="container" align="bottom" width="get:skin_settings.controlbar_width" height="get:skin_settings.controlbar_height" x="0" y="get:skin_settings.controlbar_offset.normal" y_closed="-60" onloaded="skin_calc_opened_closed(); set_css_id('gradient');" zorder="500" bgcolor="0xd2d2d2" bgalpha="0.5" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge">
 			<layer name="skin_btn_navi" type="container" align="bottom" x="0" y="0" width="50%" height="40">
 				<layer name="skin_btn_left" style="skin_base|skin_glow" crop="0|192|64|64" align="right" x="220" y="0" scale="0.5" ondown2="set(hlookat_moveforce,-1);" onup2="set(hlookat_moveforce,0);" />
-				<layer name="skin_btn_right" style="skin_base|skin_glow" crop="64|192|64|64" align="right" x="200" y="0" scale="0.5" ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);" />
-				<layer name="skin_btn_up" style="skin_base|skin_glow" crop="0|256|64|64" align="right" x="170" y="0" scale="0.5" ondown2="set(vlookat_moveforce,-1);" onup2="set(vlookat_moveforce,0);" />
+				<layer name="skin_btn_right" style="skin_base|skin_glow" crop="64|192|64|64" align="right" x="190" y="0" scale="0.5" ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);" />
+				<layer name="skin_btn_up" style="skin_base|skin_glow" crop="0|256|64|64" align="right" x="165" y="0" scale="0.5" ondown2="set(vlookat_moveforce,-1);" onup2="set(vlookat_moveforce,0);" />
 				<layer name="skin_btn_down" style="skin_base|skin_glow" crop="64|256|64|64" align="right" x="140" y="0" scale="0.5" ondown2="set(vlookat_moveforce,+1);" onup2="set(vlookat_moveforce,0);" />
 				<layer name="skin_btn_in" style="skin_base|skin_glow" crop="0|320|64|64" align="right" x="110" y="0" scale="0.5" ondown2="set(fov_moveforce,-1);" onup2="set(fov_moveforce,0);" />
 				<layer name="skin_btn_out" style="skin_base|skin_glow" crop="64|320|64|64" align="right" x="80" y="0" scale="0.5" ondown2="set(fov_moveforce,+1);" onup2="set(fov_moveforce,0);" />
@@ -1122,14 +1131,12 @@
 		//tween(layer[skin_scroll_window].y,   get(layer[skin_scroll_window  ].y_closed), get(hidetime));
 		//tween(layer[skin_splitter_bottom].y, get(layer[skin_splitter_bottom].y_closed), get(hidetime));
 		tween(layer[skin_control_bar].y,     get(layer[skin_control_bar    ].y_closed), get(hidetime));
-		tween(plugin[logo].y,     0, get(hidetime));
 
 		//set(layer[skin_btn_prev_fs].enabled, true);
 		//set(layer[skin_btn_next_fs].enabled, true);
 		//tween(layer[skin_btn_prev_fs].x|layer[skin_btn_prev_fs].alpha, 0|0.25, get(hidetime));
 		//tween(layer[skin_btn_next_fs].x|layer[skin_btn_next_fs].alpha, 0|0.25, get(hidetime));
 
-		if(layer[skin_logo], tween(layer[skin_logo].alpha, 0.0, 0.5, default, set(layer[skin_logo].visible,false)); );
 
 		stopdelayedcall(skin_btn_show_alpha);
 		set(layer[skin_btn_show].visible, true);
@@ -1147,9 +1154,6 @@
 		set(layer[skin_btn_next_fs].enabled, false);
 		tween(layer[skin_btn_prev_fs].x|layer[skin_btn_prev_fs].alpha, -50|0.0);
 		tween(layer[skin_btn_next_fs].x|layer[skin_btn_next_fs].alpha, -50|0.0);
-		tween(plugin[logo].y,     60, get(hidetime));
-
-		if(layer[skin_logo], set(layer[skin_logo].visible,true); tween(layer[skin_logo].alpha, 1.0); );
 
 		stopdelayedcall(skin_btn_show_alpha);
 		set(layer[skin_btn_show].visible, false);

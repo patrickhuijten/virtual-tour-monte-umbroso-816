@@ -60,16 +60,6 @@
 	               design_text_shadow="1"
 	               />
 
-<plugin name="logo" 
-		url="skin/logo.png" 
-		onclick="openurl('https://inmobiliariabritania.com/monte-umbroso-816/',_blank);" 
-		keep="true" 
-		enabled="true" 
-		align="leftbottom" 
-		x="10" 
-		y="10" 
-		scale="0.5" 
-		scale.mobile="0.25" />
 	<!--
 	    For an alternative skin design either change the <skin_settings> values 
 	    from above or optionally include one of the predefined designs from below.
